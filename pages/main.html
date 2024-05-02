@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Калькулятор</title>
+	<script src="../web3.min.js"></script>
+	<script src="../app.js"></script>
+	<link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<div class="container">
+	<h1>Заметки</h1>
+	<form id="noteForm">
+		<input type="text" id="nameInput" placeholder="Имя" required><br>
+		<input type="number" id="numberInput" placeholder="Номер телефона" required><br>
+		<input type="text" id="physicalAddressInput" placeholder="Физический адрес" required><br>
+		<div class="property-container">
+			<div id="propertyInfo" class="property-info"></div>
+		</div>
+		<button type="submit" id="setNoteButton" style="margin-bottom: 10px">Сохранить заметку</button>
+		<button type="button" id="getNoteButton">Получить последнюю заметку</button>
+	</form>
+</div>
+<div id="result"></div>
+
+<script>
+	const ethereumAddress = "0x7b877981832C0945236989317ee6f287409542c9";
+
+	document.addEventListener('DOMContentLoaded', function() {
+		const noteForm = document.getElementById('noteForm');
+		const propertyInfoDiv = document.getElementById('propertyInfo');
+
+		noteForm.addEventListener('submit', async function(event) {
+			event.preventDefault();
+			const name = document.getElementById('nameInput').value;
+			const phoneNumber = document.getElementById('numberInput').value;
+			const physicalAddress = document.getElementById('physicalAddressInput').value;
+
+			try {
+				await contract.methods.set(name, phoneNumber, physicalAddress).send({
+					from: ethereumAddress,
+					gas: 3000000,
+				});
+				propertyInfoDiv.innerHTML = `<p><strong>Заметка успешно сохранена!</strong></p>`;
+			} catch (error) {
+				propertyInfoDiv.innerHTML = `<p>Ошибка: ${error.message}</p>`;
+			}
+		});
+
+		const getNoteButton = document.getElementById('getNoteButton');
+		getNoteButton.addEventListener('click', async function() {
+			try {
+				const note = await contract.methods.get().call();
+				propertyInfoDiv.innerHTML = `<p><strong>Имя:</strong> ${note.name}</p>
+                                             <p><strong>Номер телефона:</strong> ${note.phoneNumber}</p>
+                                             <p><strong>Физический адрес:</strong> ${note.physicalAddress}</p>`;
+			} catch (error) {
+				propertyInfoDiv.innerHTML = `<p>Ошибка: ${error.message}</p>`;
+			}
+		});
+	});
+</script>
 
 </body>
 </html>

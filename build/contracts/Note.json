@@ -1,0 +1,1126 @@
+{
+  "contractName": "Note",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "lastNote",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "phoneNumber",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "physicalAddress",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "newName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "newPhoneNumber",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "newPhysicalAddress",
+          "type": "string"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "phoneNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "physicalAddress",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Note.NoteData",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"phoneNumber\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"physicalAddress\",\"type\":\"string\"}],\"internalType\":\"struct Note.NoteData\",\"name\":\"\",\"type\":\"tuple\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastNote\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"phoneNumber\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"physicalAddress\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"newName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"newPhoneNumber\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"newPhysicalAddress\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Note.sol\":\"Note\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Note.sol\":{\"keccak256\":\"0x50889c7532e2fe044af37b171ed3d5331832b3b4376a93ee6c7a4982cd0d2bc9\",\"urls\":[\"bzz-raw://2511fab9d23281148acc636dfc76b6aa890972068661c357882562e15a27cf52\",\"dweb:/ipfs/QmYF4cUZGJgVMjDiaPjffuhN23ud6JczA2wkdRLm2MkEnE\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610906806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80636d4ce63c14610046578063acddd36914610064578063da465d7414610084575b600080fd5b61004e6100a0565b60405161005b91906107c8565b60405180910390f35b61006c6102a0565b60405161007b9392919061077c565b60405180910390f35b61009e60048036036100999190810190610615565b610480565b005b6100a86104fb565b6000604051806060016040529081600082018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561014e5780601f106101235761010080835404028352916020019161014e565b820191906000526020600020905b81548152906001019060200180831161013157829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f05780601f106101c5576101008083540402835291602001916101f0565b820191906000526020600020905b8154815290600101906020018083116101d357829003601f168201915b50505050508152602001600282018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102925780601f1061026757610100808354040283529160200191610292565b820191906000526020600020905b81548152906001019060200180831161027557829003601f168201915b505050505081525050905090565b6000806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561033a5780601f1061030f5761010080835404028352916020019161033a565b820191906000526020600020905b81548152906001019060200180831161031d57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103d85780601f106103ad576101008083540402835291602001916103d8565b820191906000526020600020905b8154815290600101906020018083116103bb57829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104765780601f1061044b57610100808354040283529160200191610476565b820191906000526020600020905b81548152906001019060200180831161045957829003601f168201915b5050505050905083565b6040518060600160405280848152602001838152602001828152506000808201518160000190805190602001906104b892919061051c565b5060208201518160010190805190602001906104d592919061051c565b5060408201518160020190805190602001906104f292919061051c565b50905050505050565b60405180606001604052806060815260200160608152602001606081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061055d57805160ff191683800117855561058b565b8280016001018555821561058b579182015b8281111561058a57825182559160200191906001019061056f565b5b509050610598919061059c565b5090565b6105be91905b808211156105ba5760008160009055506001016105a2565b5090565b90565b600082601f8301126105d257600080fd5b81356105e56105e082610817565b6107ea565b9150808252602083016020830185838301111561060157600080fd5b61060c838284610870565b50505092915050565b60008060006060848603121561062a57600080fd5b600084013567ffffffffffffffff81111561064457600080fd5b610650868287016105c1565b935050602084013567ffffffffffffffff81111561066d57600080fd5b610679868287016105c1565b925050604084013567ffffffffffffffff81111561069657600080fd5b6106a2868287016105c1565b9150509250925092565b60006106b782610843565b6106c1818561084e565b93506106d181856020860161087f565b6106da816108b2565b840191505092915050565b60006106f082610843565b6106fa818561085f565b935061070a81856020860161087f565b610713816108b2565b840191505092915050565b6000606083016000830151848203600086015261073b82826106ac565b9150506020830151848203602086015261075582826106ac565b9150506040830151848203604086015261076f82826106ac565b9150508091505092915050565b6000606082019050818103600083015261079681866106e5565b905081810360208301526107aa81856106e5565b905081810360408301526107be81846106e5565b9050949350505050565b600060208201905081810360008301526107e2818461071e565b905092915050565b6000604051905081810181811067ffffffffffffffff8211171561080d57600080fd5b8060405250919050565b600067ffffffffffffffff82111561082e57600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600082825260208201905092915050565b82818337600083830152505050565b60005b8381101561089d578082015181840152602081019050610882565b838111156108ac576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a7231582043c2c9f742cf006a91d3829cbc88ec9e948da70bc98eb2b046b334bb524f3caf6c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80636d4ce63c14610046578063acddd36914610064578063da465d7414610084575b600080fd5b61004e6100a0565b60405161005b91906107c8565b60405180910390f35b61006c6102a0565b60405161007b9392919061077c565b60405180910390f35b61009e60048036036100999190810190610615565b610480565b005b6100a86104fb565b6000604051806060016040529081600082018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561014e5780601f106101235761010080835404028352916020019161014e565b820191906000526020600020905b81548152906001019060200180831161013157829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f05780601f106101c5576101008083540402835291602001916101f0565b820191906000526020600020905b8154815290600101906020018083116101d357829003601f168201915b50505050508152602001600282018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102925780601f1061026757610100808354040283529160200191610292565b820191906000526020600020905b81548152906001019060200180831161027557829003601f168201915b505050505081525050905090565b6000806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561033a5780601f1061030f5761010080835404028352916020019161033a565b820191906000526020600020905b81548152906001019060200180831161031d57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103d85780601f106103ad576101008083540402835291602001916103d8565b820191906000526020600020905b8154815290600101906020018083116103bb57829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104765780601f1061044b57610100808354040283529160200191610476565b820191906000526020600020905b81548152906001019060200180831161045957829003601f168201915b5050505050905083565b6040518060600160405280848152602001838152602001828152506000808201518160000190805190602001906104b892919061051c565b5060208201518160010190805190602001906104d592919061051c565b5060408201518160020190805190602001906104f292919061051c565b50905050505050565b60405180606001604052806060815260200160608152602001606081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061055d57805160ff191683800117855561058b565b8280016001018555821561058b579182015b8281111561058a57825182559160200191906001019061056f565b5b509050610598919061059c565b5090565b6105be91905b808211156105ba5760008160009055506001016105a2565b5090565b90565b600082601f8301126105d257600080fd5b81356105e56105e082610817565b6107ea565b9150808252602083016020830185838301111561060157600080fd5b61060c838284610870565b50505092915050565b60008060006060848603121561062a57600080fd5b600084013567ffffffffffffffff81111561064457600080fd5b610650868287016105c1565b935050602084013567ffffffffffffffff81111561066d57600080fd5b610679868287016105c1565b925050604084013567ffffffffffffffff81111561069657600080fd5b6106a2868287016105c1565b9150509250925092565b60006106b782610843565b6106c1818561084e565b93506106d181856020860161087f565b6106da816108b2565b840191505092915050565b60006106f082610843565b6106fa818561085f565b935061070a81856020860161087f565b610713816108b2565b840191505092915050565b6000606083016000830151848203600086015261073b82826106ac565b9150506020830151848203602086015261075582826106ac565b9150506040830151848203604086015261076f82826106ac565b9150508091505092915050565b6000606082019050818103600083015261079681866106e5565b905081810360208301526107aa81856106e5565b905081810360408301526107be81846106e5565b9050949350505050565b600060208201905081810360008301526107e2818461071e565b905092915050565b6000604051905081810181811067ffffffffffffffff8211171561080d57600080fd5b8060405250919050565b600067ffffffffffffffff82111561082e57600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600082825260208201905092915050565b82818337600083830152505050565b60005b8381101561089d578082015181840152602081019050610882565b838111156108ac576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a7231582043c2c9f742cf006a91d3829cbc88ec9e948da70bc98eb2b046b334bb524f3caf6c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "106:458:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:458:0;;;;;;;",
+  "deployedSourceMap": "106:458:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:458:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;474:87;;;:::i;:::-;;;;;;;;;;;;;;;;243:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;276:190;;;;;;;;;;;;;;;;:::i;:::-;;474:87;510:15;;:::i;:::-;545:8;538:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;474:87;:::o;243:24::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;276:190::-;405:53;;;;;;;;414:7;405:53;;;;423:14;405:53;;;;439:18;405:53;;;394:8;:64;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;276:190;;;:::o;106:458::-;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:809;;;;624:2;612:9;603:7;599:23;595:32;592:2;;;640:1;637;630:12;592:2;703:1;692:9;688:17;675:31;726:18;718:6;715:30;712:2;;;758:1;755;748:12;712:2;778:63;833:7;824:6;813:9;809:22;778:63;;;768:73;;654:193;906:2;895:9;891:18;878:32;930:18;922:6;919:30;916:2;;;962:1;959;952:12;916:2;982:63;1037:7;1028:6;1017:9;1013:22;982:63;;;972:73;;857:194;1110:2;1099:9;1095:18;1082:32;1134:18;1126:6;1123:30;1120:2;;;1166:1;1163;1156:12;1120:2;1186:63;1241:7;1232:6;1221:9;1217:22;1186:63;;;1176:73;;1061:194;586:679;;;;;;1272:319;;1370:35;1399:5;1370:35;;;1417:61;1471:6;1466:3;1417:61;;;1410:68;;1483:52;1528:6;1523:3;1516:4;1509:5;1505:16;1483:52;;;1556:29;1578:6;1556:29;;;1551:3;1547:39;1540:46;;1350:241;;;;;;1598:339;;1706:35;1735:5;1706:35;;;1753:71;1817:6;1812:3;1753:71;;;1746:78;;1829:52;1874:6;1869:3;1862:4;1855:5;1851:16;1829:52;;;1902:29;1924:6;1902:29;;;1897:3;1893:39;1886:46;;1686:251;;;;;;1995:879;;2142:4;2137:3;2133:14;2225:4;2218:5;2214:16;2208:23;2277:3;2271:4;2267:14;2260:4;2255:3;2251:14;2244:38;2297:69;2361:4;2347:12;2297:69;;;2289:77;;2162:216;2458:4;2451:5;2447:16;2441:23;2510:3;2504:4;2500:14;2493:4;2488:3;2484:14;2477:38;2530:69;2594:4;2580:12;2530:69;;;2522:77;;2388:223;2695:4;2688:5;2684:16;2678:23;2747:3;2741:4;2737:14;2730:4;2725:3;2721:14;2714:38;2767:69;2831:4;2817:12;2767:69;;;2759:77;;2621:227;2865:4;2858:11;;2115:759;;;;;;2881:675;;3103:2;3092:9;3088:18;3080:26;;3153:9;3147:4;3143:20;3139:1;3128:9;3124:17;3117:47;3178:74;3247:4;3238:6;3178:74;;;3170:82;;3300:9;3294:4;3290:20;3285:2;3274:9;3270:18;3263:48;3325:74;3394:4;3385:6;3325:74;;;3317:82;;3447:9;3441:4;3437:20;3432:2;3421:9;3417:18;3410:48;3472:74;3541:4;3532:6;3472:74;;;3464:82;;3074:482;;;;;;;3563:353;;3727:2;3716:9;3712:18;3704:26;;3777:9;3771:4;3767:20;3763:1;3752:9;3748:17;3741:47;3802:104;3901:4;3892:6;3802:104;;;3794:112;;3698:218;;;;;3923:256;;3985:2;3979:9;3969:19;;4023:4;4015:6;4011:17;4122:6;4110:10;4107:22;4086:18;4074:10;4071:34;4068:62;4065:2;;;4143:1;4140;4133:12;4065:2;4163:10;4159:2;4152:22;3963:216;;;;;4186:322;;4330:18;4322:6;4319:30;4316:2;;;4362:1;4359;4352:12;4316:2;4429:4;4425:9;4418:4;4410:6;4406:17;4402:33;4394:41;;4493:4;4487;4483:15;4475:23;;4253:255;;;;4515:118;;4605:5;4599:12;4589:22;;4570:63;;;;4641:153;;4746:6;4741:3;4734:19;4783:4;4778:3;4774:14;4759:29;;4727:67;;;;;4803:163;;4918:6;4913:3;4906:19;4955:4;4950:3;4946:14;4931:29;;4899:67;;;;;4975:145;5056:6;5051:3;5046;5033:30;5112:1;5103:6;5098:3;5094:16;5087:27;5026:94;;;;5129:268;5194:1;5201:101;5215:6;5212:1;5209:13;5201:101;;;5291:1;5286:3;5282:11;5276:18;5272:1;5267:3;5263:11;5256:39;5237:2;5234:1;5230:10;5225:15;;5201:101;;;5317:6;5314:1;5311:13;5308:2;;;5382:1;5373:6;5368:3;5364:16;5357:27;5308:2;5178:219;;;;;5405:97;;5493:2;5489:7;5484:2;5477:5;5473:14;5469:28;5459:38;;5453:49;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract Note {\r\n    struct NoteData {\r\n        string name;\r\n        string phoneNumber;\r\n        string physicalAddress;\r\n    }\r\n\r\n    NoteData public lastNote;\r\n\r\n    function set(string memory newName, string memory newPhoneNumber, string memory newPhysicalAddress) public {\r\n        lastNote = NoteData(newName, newPhoneNumber, newPhysicalAddress);\r\n    }\r\n\r\n    function get() public view returns (NoteData memory) {\r\n        return lastNote;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\egoru\\WebstormProjects\\ethereum-note-dapp\\contracts\\Note.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Note.sol",
+    "exportedSymbols": {
+      "Note": [
+        38
+      ]
+    },
+    "id": 39,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "69:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 38,
+        "linearizedBaseContracts": [
+          38
+        ],
+        "name": "Note",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Note.NoteData",
+            "id": 9,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "154:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 3,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "154:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6,
+                "name": "phoneNumber",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "176:18:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "name": "physicalAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "205:22:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "205:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "NoteData",
+            "nodeType": "StructDefinition",
+            "scope": 38,
+            "src": "127:108:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11,
+            "name": "lastNote",
+            "nodeType": "VariableDeclaration",
+            "scope": 38,
+            "src": "243:24:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_NoteData_$9_storage",
+              "typeString": "struct Note.NoteData"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 10,
+              "name": "NoteData",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9,
+              "src": "243:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_NoteData_$9_storage_ptr",
+                "typeString": "struct Note.NoteData"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 28,
+              "nodeType": "Block",
+              "src": "383:83:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 20,
+                      "name": "lastNote",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11,
+                      "src": "394:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_NoteData_$9_storage",
+                        "typeString": "struct Note.NoteData storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 22,
+                          "name": "newName",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13,
+                          "src": "414:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 23,
+                          "name": "newPhoneNumber",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15,
+                          "src": "423:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 24,
+                          "name": "newPhysicalAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17,
+                          "src": "439:18:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 21,
+                        "name": "NoteData",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9,
+                        "src": "405:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_NoteData_$9_storage_ptr_$",
+                          "typeString": "type(struct Note.NoteData storage pointer)"
+                        }
+                      },
+                      "id": 25,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "405:53:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_NoteData_$9_memory",
+                        "typeString": "struct Note.NoteData memory"
+                      }
+                    },
+                    "src": "394:64:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_NoteData_$9_storage",
+                      "typeString": "struct Note.NoteData storage ref"
+                    }
+                  },
+                  "id": 27,
+                  "nodeType": "ExpressionStatement",
+                  "src": "394:64:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13,
+                  "name": "newName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "289:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 12,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "289:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15,
+                  "name": "newPhoneNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "312:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "312:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17,
+                  "name": "newPhysicalAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "342:32:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "342:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "288:87:0"
+            },
+            "returnParameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "383:0:0"
+            },
+            "scope": 38,
+            "src": "276:190:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 36,
+              "nodeType": "Block",
+              "src": "527:34:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 34,
+                    "name": "lastNote",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11,
+                    "src": "545:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_NoteData_$9_storage",
+                      "typeString": "struct Note.NoteData storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 33,
+                  "id": 35,
+                  "nodeType": "Return",
+                  "src": "538:15:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 37,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "486:2:0"
+            },
+            "returnParameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "510:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_NoteData_$9_memory_ptr",
+                    "typeString": "struct Note.NoteData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 31,
+                    "name": "NoteData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9,
+                    "src": "510:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_NoteData_$9_storage_ptr",
+                      "typeString": "struct Note.NoteData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "509:17:0"
+            },
+            "scope": 38,
+            "src": "474:87:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 39,
+        "src": "106:458:0"
+      }
+    ],
+    "src": "33:533:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Note.sol",
+      "exportedSymbols": {
+        "Note": [
+          38
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2,
+        "name": "PragmaDirective",
+        "src": "69:33:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            38
+          ],
+          "name": "Note",
+          "scope": 39
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Note.NoteData",
+              "name": "NoteData",
+              "scope": 38,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 9,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 3,
+                    "name": "ElementaryTypeName",
+                    "src": "154:6:0"
+                  }
+                ],
+                "id": 4,
+                "name": "VariableDeclaration",
+                "src": "154:11:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "phoneNumber",
+                  "scope": 9,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 5,
+                    "name": "ElementaryTypeName",
+                    "src": "176:6:0"
+                  }
+                ],
+                "id": 6,
+                "name": "VariableDeclaration",
+                "src": "176:18:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "physicalAddress",
+                  "scope": 9,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 7,
+                    "name": "ElementaryTypeName",
+                    "src": "205:6:0"
+                  }
+                ],
+                "id": 8,
+                "name": "VariableDeclaration",
+                "src": "205:22:0"
+              }
+            ],
+            "id": 9,
+            "name": "StructDefinition",
+            "src": "127:108:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "lastNote",
+              "scope": 38,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Note.NoteData",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "NoteData",
+                  "referencedDeclaration": 9,
+                  "type": "struct Note.NoteData"
+                },
+                "id": 10,
+                "name": "UserDefinedTypeName",
+                "src": "243:8:0"
+              }
+            ],
+            "id": 11,
+            "name": "VariableDeclaration",
+            "src": "243:24:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "set",
+              "scope": 38,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "newName",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 12,
+                        "name": "ElementaryTypeName",
+                        "src": "289:6:0"
+                      }
+                    ],
+                    "id": 13,
+                    "name": "VariableDeclaration",
+                    "src": "289:21:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "newPhoneNumber",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 14,
+                        "name": "ElementaryTypeName",
+                        "src": "312:6:0"
+                      }
+                    ],
+                    "id": 15,
+                    "name": "VariableDeclaration",
+                    "src": "312:28:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "newPhysicalAddress",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 16,
+                        "name": "ElementaryTypeName",
+                        "src": "342:6:0"
+                      }
+                    ],
+                    "id": 17,
+                    "name": "VariableDeclaration",
+                    "src": "342:32:0"
+                  }
+                ],
+                "id": 18,
+                "name": "ParameterList",
+                "src": "288:87:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "383:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Note.NoteData storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 11,
+                              "type": "struct Note.NoteData storage ref",
+                              "value": "lastNote"
+                            },
+                            "id": 20,
+                            "name": "Identifier",
+                            "src": "394:8:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct Note.NoteData memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 9,
+                                  "type": "type(struct Note.NoteData storage pointer)",
+                                  "value": "NoteData"
+                                },
+                                "id": 21,
+                                "name": "Identifier",
+                                "src": "405:8:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 13,
+                                  "type": "string memory",
+                                  "value": "newName"
+                                },
+                                "id": 22,
+                                "name": "Identifier",
+                                "src": "414:7:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 15,
+                                  "type": "string memory",
+                                  "value": "newPhoneNumber"
+                                },
+                                "id": 23,
+                                "name": "Identifier",
+                                "src": "423:14:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 17,
+                                  "type": "string memory",
+                                  "value": "newPhysicalAddress"
+                                },
+                                "id": 24,
+                                "name": "Identifier",
+                                "src": "439:18:0"
+                              }
+                            ],
+                            "id": 25,
+                            "name": "FunctionCall",
+                            "src": "405:53:0"
+                          }
+                        ],
+                        "id": 26,
+                        "name": "Assignment",
+                        "src": "394:64:0"
+                      }
+                    ],
+                    "id": 27,
+                    "name": "ExpressionStatement",
+                    "src": "394:64:0"
+                  }
+                ],
+                "id": 28,
+                "name": "Block",
+                "src": "383:83:0"
+              }
+            ],
+            "id": 29,
+            "name": "FunctionDefinition",
+            "src": "276:190:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "get",
+              "scope": 38,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 30,
+                "name": "ParameterList",
+                "src": "486:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 37,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Note.NoteData",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "NoteData",
+                          "referencedDeclaration": 9,
+                          "type": "struct Note.NoteData"
+                        },
+                        "id": 31,
+                        "name": "UserDefinedTypeName",
+                        "src": "510:8:0"
+                      }
+                    ],
+                    "id": 32,
+                    "name": "VariableDeclaration",
+                    "src": "510:15:0"
+                  }
+                ],
+                "id": 33,
+                "name": "ParameterList",
+                "src": "509:17:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 33
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 11,
+                          "type": "struct Note.NoteData storage ref",
+                          "value": "lastNote"
+                        },
+                        "id": 34,
+                        "name": "Identifier",
+                        "src": "545:8:0"
+                      }
+                    ],
+                    "id": 35,
+                    "name": "Return",
+                    "src": "538:15:0"
+                  }
+                ],
+                "id": 36,
+                "name": "Block",
+                "src": "527:34:0"
+              }
+            ],
+            "id": 37,
+            "name": "FunctionDefinition",
+            "src": "474:87:0"
+          }
+        ],
+        "id": 38,
+        "name": "ContractDefinition",
+        "src": "106:458:0"
+      }
+    ],
+    "id": 39,
+    "name": "SourceUnit",
+    "src": "33:533:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xa727c8070ecBAA04e6c66f0eE816A0F8215E7650",
+      "transactionHash": "0x9ab0f39f375f11640d72fdf2fc8f50976e538ae2421c5654f700262187fdd024"
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-05-02T15:28:24.045Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

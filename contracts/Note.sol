@@ -4,19 +4,19 @@ pragma solidity >=0.4.22 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 contract Note {
-    struct note {
+    struct NoteData {
         string name;
-        string number;
-        address noteAddress;
+        string phoneNumber;
+        string physicalAddress;
     }
 
-    mapping(uint256 => note) public notes;
+    NoteData public lastNote;
 
-    function set(string memory newName, string memory newNumber, address newAddress) public {
-        notes[0] = note(newName, newNumber, newAddress);
+    function set(string memory newName, string memory newPhoneNumber, string memory newPhysicalAddress) public {
+        lastNote = NoteData(newName, newPhoneNumber, newPhysicalAddress);
     }
 
-    function get() public view returns (note memory) {
-        return notes[0];
+    function get() public view returns (NoteData memory) {
+        return lastNote;
     }
 }
